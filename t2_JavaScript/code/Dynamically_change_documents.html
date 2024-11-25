@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>动态改变文档内容</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var changeTitleButton = document.getElementById('changeTitle');
+            changeTitleButton.addEventListener('click', function() {
+                var h1Element = document.querySelector('h1');
+                h1Element.textContent = '欢迎来到我的网站';
+
+                var currentTimeDiv = document.getElementById('currentTime');
+                var currentTime = new Date().toLocaleString(); // 获取当前时间
+                currentTimeDiv.textContent = '当前时间: ' + currentTime;
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>初始标题</h1>
+<button id="changeTitle">改变标题</button>
+<div id="currentTime"></div>
+</body>
+</html>
